@@ -5,6 +5,8 @@ import DestinationItem from '../DestinationItem'
 
 import './index.css'
 
+const {destinationsList} = this.props
+
 class DestinationSearch extends Component {
   state = {
     searchInput: '',
@@ -30,7 +32,10 @@ class DestinationSearch extends Component {
         />
         <ul>
           {searchResults.map(eachDestination => (
-            <DestinationItem />
+            <DestinationItem 
+            destinationDetails={eachDestination}
+              key={eachDestination.id}
+            />
           ))}
         </ul>
       </div>
